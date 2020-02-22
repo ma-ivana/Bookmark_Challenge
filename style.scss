@@ -1,0 +1,128 @@
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+@import url('https://fonts.googleapis.com/css?family=Rubik:400,500&display=swap');
+
+$fontMain: Rubik;
+$spaceLeftRight-5:  0 5% 0 5%;
+$spaceLeftRight-8:  0 8% 0 8%;
+$fontSizeButton: 16px;
+$shadowButton: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+$lightColorText: hsl(229, 8%, 60%);
+$softRed: hsl(0, 94%, 66%);
+$softBlue: hsl(231, 69%, 60%);
+
+@mixin commonFlex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+} 
+
+@mixin button {
+  height: 40px;
+  border: none;
+  border-radius: 5%;
+  font-family: $fontMain;
+  font-size: $fontSizeButton;
+  padding: 0;
+  box-shadow: $shadowButton;
+}
+
+
+body {
+margin: 0;
+padding: $spaceLeftRight-8;
+font-family: $fontMain;
+
+  nav {
+    @include commonFlex;
+    height: 80px;
+    margin: $spaceLeftRight-5;
+    padding: 0 3% 0 0;
+    
+    .icon {
+      width: 90%;
+      height: auto;
+
+      img {
+        width: 100%;
+      }
+    }
+
+      .menu {
+        display: flex;
+        justify-content: flex-end;
+        margin: 0;
+        width: 55%;       
+
+        ul {
+          @include commonFlex;
+          margin: 0 10% 0 0;
+          color: $lightColorText;
+          font-size: $fontSizeButton;
+          width: 100%;
+          
+          li {
+            list-style: none;
+          }
+        }
+
+        button {
+          @include button;          
+          margin: 0 4% 0 10%;
+          width: 35%;
+          background-color: $softRed;
+          color: white;
+          font-size: $fontSizeButton;
+          padding: 0;
+          box-shadow: $shadowButton;
+        }         
+    
+    }
+
+  }
+
+  .main {
+    padding: 65px 95px 65px 65px;
+    display: flex;
+
+    .text {
+      
+        h1 {
+          color: rgb(53, 50, 50);
+          font-size: 35px;
+        }
+      color: $lightColorText;
+
+      .chrome, .firefox {
+        @include button;
+        width: 170px;
+        margin: 10px;
+      }
+
+      .chrome {
+        background-color: $softBlue;
+        color: white;
+      }
+
+      .firefox {
+        background-color: white;
+      }
+    }
+
+    .image {
+      width: 95%;
+      margin-left: 60px;
+      
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+  }
+
+
+
+
+}
